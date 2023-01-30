@@ -1,0 +1,14 @@
+<!-- <p>completion-date-update works!</p> -->
+
+<div *ngIf='showDateForm' class="container">
+    <form #dateForm="ngForm" (ngSubmit)="initializeUpdateOperation(dateForm)" class="form form-input">
+      Please Enter Target Completion Date:
+        <input name="certcompdate" id="certcompdate-name" type="text" class="form-input" placeholder="01/01/1990" required ngModel>
+        <input type="submit" value="Submit">
+    </form>
+   
+  </div>
+
+  <div>
+    <button [routerLink] = "['/associateuser-functions' , employeeId , 'moreactions']" class="btnhome btn-primary">Back</button>
+  </div>

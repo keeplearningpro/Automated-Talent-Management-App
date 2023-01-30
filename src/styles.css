@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url(https://unpkg.com/bootstrap@4.1.0/dist/css/bootstrap.min.css);
+
+body  { 
+    /* color: #F9AA33;   */
+    color: #4E342E;
+    /* background-color:#FFD180;   */
+    background-image: url('assets/images/9.jpg');
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+}
+
+.panel-heading {
+    text-align: center;
+}
+
+.table-heading {
+    /* background-color:#004D40; */
+   background-color: #FFF9C4;
+    font-family: sans-serif;
+    color: #4E342E;
+}
+
+.table-body {
+    /* background-color: #FEDBD0; */
+    /* background-color: #FFF9C4; */
+    background-color: #4E342E;
+    color: #FFF9C4;
+    font-family: sans-serif;
+}
+
+.btn-primary {
+    background-color: #37474F;
+    border: maroon;
+}
+
+    
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

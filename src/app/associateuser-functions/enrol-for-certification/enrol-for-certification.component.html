@@ -1,0 +1,65 @@
+<!-- <p>enrol-for-certification works!</p>
+<p>enrol-for-certification works!</p> -->
+
+<div *ngIf="showCertificationList" class="container">
+    <form #certificationForm="ngForm" (ngSubmit)="fetchCertificateListByName(certificationForm)" class="form form-input">
+      Please Enter Technologyname :
+        <input name="techname" id="techname-name" type="text" class="form-input" placeholder="Java" required ngModel>
+        <input type="submit" value="Submit">
+    </form>
+   
+  </div>
+
+<div *ngIf="showTable" class="panel panel-primary">
+
+  <div class="panel-heading">
+      <h2>Available {{technologyName}} Certifications</h2>
+  </div>
+
+<div class="panel-body">
+    <table class="table table-striped">
+      <thead class="table-heading">
+      <tr>
+        <th>Certification ID</th>
+        <th>Certification Name</th>
+        <th>Status</th>
+        <th>Type</th>
+        <th>Vendor</th>
+        <th>Exam ID</th>
+        <th>Exam Name</th>
+        <th>Payment Mode</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody class="table-body">
+      <tr *ngFor="let cert of certificatelist | async">
+        <td>{{cert.certid}}</td>
+        <td>{{cert.certname}}</td>
+        <td>{{cert.status}}</td>
+        <td>{{cert.certtype}}</td>
+        <td>{{cert.vendor}}</td>
+        <td>{{cert.examid}}</td>
+        <td>{{cert.examname}}</td>
+        <td>{{cert.paymode}}</td>
+        <td>
+            <button (click)="displayform(cert.certid,cert.certname)" class="btn btn-primary">Enrol</button>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+  </div>
+</div>
+
+  <div *ngIf='showEnrolmentForm' class="container">
+    <form #dateForm="ngForm" (ngSubmit)="enrolForCertification(dateForm)" class="form form-input">
+      Please Enter Target Completion Date:
+        <input name="certcompdate" id="certcompdate-name" type="text" class="form-input" placeholder="01/01/1990" required ngModel>
+        <input type="submit" value="Submit">
+    </form>
+   
+  </div>
+
+
+  <div>
+    <button [routerLink] ="['/associateuser-functions' , employeeId , 'moreactions']" class="btnhome btn-primary">Back</button>
+  </div>

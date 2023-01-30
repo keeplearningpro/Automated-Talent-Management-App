@@ -1,0 +1,101 @@
+<!-- <p>addassociate works!</p> -->
+
+<div class="container">
+    <h1>Add Associate Details</h1>
+  
+    <a href="#" routerLink="/superuser-functions/moreactions" class="btn btn-primary">Back</a>
+        
+    <form [formGroup]="associateAttributeForm" (ngSubmit)="addNewAssociate()">
+  
+        <div class="form-group">
+            <label for="empid">Employee ID:</label>
+            <input 
+                formControlName="empid"
+                id="my-empid" 
+                type="text" 
+                class="form-control">
+                <div *ngIf="f.empid.touched && f.empid.invalid" class="alert alert-danger">
+                <div *ngIf="f.empid.errors.required">Emp ID is required.</div>
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input 
+                formControlName="name"
+                id="my-name" 
+                type="text" 
+                class="form-control">
+                <div *ngIf="f.name.touched && f.name.invalid" class="alert alert-danger">
+                <div *ngIf="f.name.errors.required">Name is Required</div>
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label for="desig">Designation:</label>
+            <input 
+                formControlName="desig"
+                id="my-desig" 
+                type="text" 
+                class="form-control">
+                <div *ngIf="f.desig.touched && f.desig.invalid" class="alert alert-danger">
+                <div *ngIf="f.desig.errors.required">Designation is required.</div>
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label for="lead">PPL Name:</label>
+            <input 
+                formControlName="lead"
+                id="my-lead" 
+                type="text" 
+                class="form-control">
+                <div *ngIf="f.lead.touched && f.lead.invalid" class="alert alert-danger">
+                <div *ngIf="f.lead.errors.required">Lead Name is required.</div>
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label for="loc">Location:</label>
+            <input 
+                formControlName="loc"
+                id="my-loc" 
+                type="text" 
+                class="form-control">
+                <div *ngIf="f.loc.touched && f.loc.invalid" class="alert alert-danger">
+                <div *ngIf="f.loc.errors.required">Location is Required.</div>
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label for="platform">Platform:</label>
+            <input 
+                formControlName="platform"
+                id="my-platform" 
+                type="text" 
+                class="form-control">
+                <div *ngIf="f.platform.touched && f.platform.invalid" class="alert alert-danger">
+                <div *ngIf="f.platform.errors.required">Platform is Required.</div>
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label for="emailid">Email Id:</label>
+            <input 
+                formControlName="emailid"
+                id="my-emailid" 
+                type="text" 
+                class="form-control">
+                <div *ngIf="f.emailid.touched && f.emailid.invalid" class="alert alert-danger">
+                <div *ngIf="f.emailid.errors.required">Email ID is required.</div>
+                </div>
+        </div>
+ 
+        <button class="btn btn-primary" type="submit" [disabled]="!associateAttributeForm.valid">Add Associate</button>
+    </form>
+</div>
+
+
+<div>
+    <button class="btn btn-primary" routerLink='/superuser-functions'>Back To Superuser Menu</button>
+  </div>

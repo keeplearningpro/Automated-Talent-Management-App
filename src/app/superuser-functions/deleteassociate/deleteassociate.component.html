@@ -1,0 +1,52 @@
+<!-- <p>deleteassociate works!</p>
+
+<p>deleteassociate works!</p> -->
+
+<a href="#" routerLink="/superuser-functions/moreactions" class="btn btn-primary">Back</a>
+
+<div *ngIf="showTable" class="panel panel-primary">
+
+    <div class="panel-heading">
+      <h2 >Associate List</h2>
+    </div>
+
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead class="table-heading">
+          <tr>
+            <th>Employee ID</th>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Lead</th>
+            <th>Location</th>
+            <th>Platform</th>
+            <th>Email ID</th>
+            <th>Certification ID</th>
+            <th>Certification Name</th>
+            <th>Assigned By</th>
+            <th>Target Completion Date</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody class="table-body">
+          <tr>
+            <td>{{myassociate.empid}}</td>
+            <td>{{myassociate.name}}</td>
+            <td>{{myassociate.desig}}</td>
+            <td>{{myassociate.lead}}</td>
+            <td>{{myassociate.loc}}</td>
+            <td>{{myassociate.platform}}</td>
+            <td>{{myassociate.emailid}}</td>
+            <td>{{myassociate.certid}}</td>
+            <td>{{myassociate.certname}}</td>
+            <td>{{myassociate.assignedby}}</td>
+            <td>{{myassociate.certcompletiondate}}</td>
+    
+            <td>
+                <button type="button" (click)="deleteAssociateById(myassociate.empid)" class="btn btn-danger">Confirm Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>

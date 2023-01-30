@@ -1,0 +1,176 @@
+<!-- <p>updateassociate works!</p> -->
+
+
+<div class="container">
+    <h1>Update Associate</h1>
+  
+    <a href="#" routerLink="/superuser-functions/moreactions" class="btn btn-primary">Back to Action Menu</a>
+
+    
+    <form [formGroup]="form" (ngSubmit)="getNewDetails()">
+  
+        <div class="form-group">
+            <label for="desig">Designation:</label>
+            <input 
+                formControlName="desig"
+                id="id-desig" 
+                type="text" 
+                [(ngModel)]="updateCandidate.desig"
+                class="form-control">
+                 <div *ngIf="f.desig.touched && f.desig.invalid" class="alert alert-danger">
+                <div *ngIf="f.desig.errors.required">Designation is required.</div>
+                </div>
+        </div>
+        
+        <!-- <div>
+            Deignation:<input [formcontrol] = "desig">
+        </div> -->
+
+
+        <div class="form-group">
+            <label for="lead">Lead Name:</label>
+            <input 
+                formControlName="lead"
+                id="id-lead" 
+                type="text" 
+                [(ngModel)]="updateCandidate.lead"
+                class="form-control">
+            <div *ngIf="f.lead.touched && f.lead.invalid" class="alert alert-danger">
+                <div *ngIf="f.lead.errors.required">Lead Name is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="loc">TCS Location:</label>
+            <input 
+                formControlName="loc"
+                id="id-location" 
+                type="text" 
+                [(ngModel)]="updateCandidate.loc"
+                class="form-control">
+            <div *ngIf="f.loc.touched && f.loc.invalid" class="alert alert-danger">
+                <div *ngIf="f.loc.errors.required">TCS Location is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="platform">Platform:</label>
+            <input 
+                formControlName="platform"
+                id="id-platform" 
+                type="text" 
+                [(ngModel)]="updateCandidate.platform"
+                class="form-control">
+            <div *ngIf="f.platform.touched && f.platform.invalid" class="alert alert-danger">
+                <div *ngIf="f.platform.errors.required">Platform Name is required.</div>
+            </div>
+        </div>
+            
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Proceed</button>
+    </form>
+</div>
+
+<div *ngIf="decisionflag">
+    <!-- <p>Do You Want to Assign a new Certification to the Associate:</p> -->
+    <h5>Do You Want to Assign a new Certification to the Associate:</h5>
+    <button (click)="initializeCertificationUpdate()" class="btndecision btn-primary">Yes</button>
+    <button (click)="initializeOtherUpdate()" class="btndecision btn-primary">No , Update only Above Information</button>
+
+</div>
+
+<div *ngIf="showconflictmsg" >
+<p>{{ass_name}} Below Certification Already Assigned. Cannot Update Certification Now</p>
+
+<div class="panel panel-primary">
+    
+    <div class= "panel-body">
+<table class="table table-striped">
+    <thead class="table-heading">
+    <tr>
+      <th>Certification ID</th>
+      <th>Certification Name</th>
+      <th>Assigned By</th>   
+      <th>Completion Date</th>
+      <th>What do you want to do</th>
+    </tr>
+</thead>
+<tbody class="table-body">
+    <tr>
+        <td>{{asso_cur_certid}}</td>
+        <td>{{asso_cur_certname}}</td>
+        <td>{{asso_cur_assignedby}}</td>
+        <td>{{asso_cur_targetdate}}</td>
+        <td>
+            <button (click)="initializeOtherUpdate()" class="btn btn-primary">Update Other Details</button>
+            <button routerLink="/superuser-functions/moreactions" class="btn btn-primary">Go Back to Action Menu</button>
+        </td>
+    </tr>
+</tbody>
+    </table>
+</div>
+</div>
+
+</div>
+
+<div *ngIf="showtechform" class="container">
+    <form #myCertificationform="ngForm" (ngSubmit)="fetchCertificateListByName(myCertificationform)" class="form form-input">
+      Please Enter Technologyname:
+        <input name="techname" id="techname-name" type="text" class="form-input" placeholder="Java" required ngModel>
+        <input type="submit" value="Submit">
+    </form>
+   
+  </div>
+
+<div *ngIf="showCertificationList" class="panel panel-primary">
+
+<div class="panel-heading">
+    <h2>Display List of Available Certifications</h2>
+</div>
+
+
+<div class="panel-body">
+  <table class="table table-striped">
+<thead class="table-heading">
+    <tr>
+      <th>Certification ID</th>
+      <th>Name</th>
+      <th>Status</th>
+      <th>Type</th>
+      <th>Vendor</th>
+      <th>Exam ID</th>
+      <th>Exam Name</th>
+      <th>Payment Mode</th>
+      <th></th>
+    </tr>
+</thead>
+<tbody class="table-body">
+    <tr *ngFor="let cert of certificatelist | async">
+      <td>{{cert.certid}}</td>
+      <td>{{cert.certname}}</td>
+      <td>{{cert.status}}</td>
+      <td>{{cert.certtype}}</td>
+      <td>{{cert.vendor}}</td>
+      <td>{{cert.examid}}</td>
+      <td>{{cert.examname}}</td>
+      <td>{{cert.paymode}}</td>
+      <td>
+          <button (click)="setNewCertificationInfo(cert.certid,cert.certname)" class="btn btn-primary">Assign</button>
+          
+      </td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+
+  <div *ngIf="showdateform" class="container">
+      <p>Assigning Certification with ID:{{newcertid}} and Name:{{newcertname}}</p>
+    <form #myDateform="ngForm" (ngSubmit)="setNewCertificationData(myDateform)" class="form form-input">
+      Please Enter Target Completion Date :
+        <input name="mydate" id="date-name" type="text" class="form-input" placeholder="01/01/1900" required ngModel>
+        <input type="submit" value="Update Now">
+    </form>
+    </div>
+
+ 

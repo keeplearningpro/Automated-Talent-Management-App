@@ -1,0 +1,132 @@
+<!-- <p>actions works!</p> -->
+
+<button (click)="showLocationForm()" class="btnloc btn-primary">Filter Asssociatelist by Location</button>
+<button (click)="showPlatformForm()" class="btnplt btn-primary">Filter Associatelist by Platform</button>
+<button (click)="showDesinationForm()" class="btndesig btn-primary">Filter Associate by Designation</button>
+<button (click)="showLeadForm()" class="btnlead btn-primary">Filter Associate by Lead Name</button>
+<button (click)="showNameForm()" class="btnname btn-primary">Search for Associate by Name</button>
+
+
+<form *ngIf="showLocForm" [formGroup]="formLocation" (ngSubmit)="fetchAssociateByLocation()">
+  <div class="form-group">
+    <label for="location">Please Choose TCS Location:</label>
+    <select formControlName="location" class="form-control">
+      <option disabled>Select Location</option>
+      <option>Choose Location</option>
+      <option *ngFor="let associate of associateObjectList | removeDuplicate : 'location'">{{associate.loc}}</option>
+    </select>
+  </div>
+  <button class="btnsubmit btn-primary" type="submit">Submit</button>
+</form>
+
+
+
+<form *ngIf="showPltForm" [formGroup]="formPlatform" (ngSubmit)="fetchAssociateByPlatform()">
+  <div class="form-group">
+    <label for="platform">Please Choose Platform Name:</label>
+    <select formControlName="platform" class="form-control">
+      <option disabled>Select Platform</option>
+      <option>Choose Platform</option>
+      <option *ngFor="let associate of associateObjectList | removeDuplicate : 'platform'">{{associate.platform}}</option>
+    </select>
+  </div>
+  <button class="btnsubmit btn-primary" type="submit">Submit</button>
+
+</form>
+
+
+
+<form *ngIf="showDesigForm" [formGroup]="formDesignation" (ngSubmit)="fetchAssociateByDesignation()">
+  <div class="form-group">
+    <label for="designation">Please Choose Associate Designation:</label>
+    <select formControlName="designation" class="form-control">
+      <option disabled>Select Designation</option>
+      <option>Choose Designation</option>
+      <option *ngFor="let associate of associateObjectList | removeDuplicate : 'designation'">{{associate.desig}}</option>
+    </select>
+  </div>
+  <button class="btnsubmit btn-primary" type="submit">Submit</button>
+</form>
+
+
+<form *ngIf="showLdForm" [formGroup]="formLead" (ngSubmit)="fetchAssociateByLead()">
+  <div class="form-group">
+    <label for="leadname">Please Choose PPL Name:</label>
+    <select formControlName="leadname" class="form-control">
+      <option disabled>Select PPL Name</option>
+      <option>Choose PPL</option>
+      <option *ngFor="let associate of associateObjectList | removeDuplicate : 'leadname'">{{associate.lead}}</option>
+    </select>
+  </div>
+  <button class="btnsubmit btn-primary" type="submit">Submit</button>
+</form>
+
+
+
+<form *ngIf="showNmForm" #myNameform="ngForm" (ngSubmit)="fetchAssociateByName(myNameform)" class="form form-login">
+  Associate Name:
+  <input name="associatename" id="associate-name" type="text" class="form-input" placeholder="Associate Name" required
+    ngModel>
+  <input type="submit" value="Submit">
+</form>
+
+
+
+
+<div *ngIf="showTable" class="panel panel-primary">
+
+  <div class="panel-heading">
+    <h2>Associate List</h2>
+  </div>
+
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead class="table-heading">
+        <tr>
+          <th>Employee ID</th>
+          <th>Name</th>
+          <th>Designation</th>
+          <th>Lead</th>
+          <th>Location</th>
+          <th>Platform</th>
+          <th>Email ID</th>
+          <th>Certification ID</th>
+          <th>Certification Name</th>
+          <th>Assigned By</th>
+          <th>Target Completion Date</th>
+          <th>Update Action</th>
+          <th>Delete Action</th>
+
+        </tr>
+      </thead>
+      <tbody class="table-body">
+        <tr *ngFor="let observableAssociate of associateList | async">
+          <td>{{observableAssociate.empid}}</td>
+          <td>{{observableAssociate.name}}</td>
+          <td>{{observableAssociate.desig}}</td>
+          <td>{{observableAssociate.lead}}</td>
+          <td>{{observableAssociate.loc}}</td>
+          <td>{{observableAssociate.platform}}</td>
+          <td>{{observableAssociate.emailid}}</td>
+          <td>{{observableAssociate.certid}}</td>
+          <td>{{observableAssociate.certname}}</td>
+          <td>{{observableAssociate.assignedby}}</td>
+          <td>{{observableAssociate.certcompletiondate}}</td>
+
+          <td>
+            <a href="#" [routerLink]="[observableAssociate.empid, 'update']" class="btn btn-primary">Update</a>
+          </td>
+          <td>
+            <a href="#" [routerLink]="[observableAssociate.empid , 'delete']" class="btn btn-danger">Delete</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+<div>
+  <button routerLink='/superuser-functions'class="btnback btn-primary">Back To Superuser Menu</button>
+</div>

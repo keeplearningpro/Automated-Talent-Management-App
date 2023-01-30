@@ -1,0 +1,93 @@
+.btnloc {
+    margin-top: 10px;
+    margin-left: 55px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.btnplt{
+    margin-top: 10px;
+    margin-left: 55px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.btndesig {
+    margin-top: 10px;
+    margin-left: 55px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.btnlead {
+    margin-top: 10px;
+    margin-left: 55px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.btnname {
+    margin-top: 10px;
+    margin-left: 55px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+
+.form-control{
+    margin-left: 710px;
+    width: 25%;
+}
+
+.form-group{
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.form-login {
+    margin-top: 20px;
+    margin-left: 710px;
+    font-size: 20px;
+    width: 25%;
+}
+
+.form-input{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.btnsubmit {
+    margin-left: 900px;
+}
+
+.btnback {
+    margin-top: 20px;
+    margin-left: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 15px;
+    cursor: pointer;
+}

@@ -1,0 +1,22 @@
+<header>
+    <nav class ="navbar navbar-expand-md navbar-dark bg-dark">
+    <!-- <div><a href= class="navbar-brand">Au-T-Mn</a></div> -->
+    <div><a routerLink="/certificationinfo" class="navbar-brand" >See Available Certification</a></div>
+
+    
+    <ul class="navbar-nav">
+       
+      <!-- <li><a *ngIf="authenticationService.isUserLoggedIn()" routerLink="/superuser-functions" class="nav-link">Super User</a></li> -->
+      <!-- <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/addemployee" class="nav-link">Add New Employee</a></li> -->
+      <!-- <li [hidden]><a *ngIf="authenticationService.isUserLoggedIn()&& authenticationService.loggedInUserRole!=='ASSOCIATE' && authenticationService.loggedInUserRole!=='LEADUSER'" [routerLink]="['/associateuser-functions/', authenticationService.loggedInUser]" class="nav-link">Home</a></li>
+      <li [hidden]><a *ngIf="authenticationService.isUserLoggedIn() && authenticationService.loggedInUserRole==='SUPERUSER'" routerLink="/superuser-functions"class="nav-link">Home</a></li> -->
+
+
+      <li><a *ngIf="!authenticationService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li>
+      <li><a *ngIf="authenticationService.isUserLoggedIn()" routerLink="/logout" class="nav-link">LogOut</a></li>
+    
+    </ul>
+      </nav>
+</header>
+
+

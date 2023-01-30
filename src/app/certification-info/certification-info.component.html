@@ -1,0 +1,50 @@
+<div class="container">
+    <form #TehnologyNameForm="ngForm" (ngSubmit)="fetchCertificationListByTechnology(TehnologyNameForm)" class="form form-input">
+      Please Enter Technology Name: <span></span>
+        <input name="techname" id="techname-name" type="text" class="form-input" placeholder="Java" required ngModel>
+        <input type="submit" value="Search">
+    </form>
+   
+</div>
+
+
+
+
+
+<div *ngIf="showCertificationList" class="panel panel-primary">
+
+
+    <div class="panel-heading">
+      <h2>Available {{technologyName}} Certifications</h2>
+    </div>
+
+
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead class="table-heading">
+          <tr>
+            <th>Certification ID</th>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Type</th>
+            <th>Vendor</th>
+            <th>Exam ID</th>
+            <th>Exam Name</th>
+            <th>Payment Mode</th>
+          </tr>
+        </thead>
+        <tbody class="table-body">
+          <tr *ngFor="let certname of certificatelist | async">
+            <td>{{certname.certid}}</td>
+            <td>{{certname.certname}}</td>
+            <td>{{certname.status}}</td>
+            <td>{{certname.certtype}}</td>
+            <td>{{certname.vendor}}</td>
+            <td>{{certname.examid}}</td>
+            <td>{{certname.examname}}</td>
+            <td>{{certname.paymode}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

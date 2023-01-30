@@ -1,0 +1,32 @@
+.btnalldtls {
+    margin-top: 75px;
+    margin-left: 75px;
+    padding-left: 175px;
+    padding-right: 175px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.btnmodify{
+    margin-top: 75px;
+    margin-left: 80px;
+    padding-left: 75px;
+    padding-right: 75px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.btnadd{
+    margin-top: 75px;
+    margin-left: 80px;
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-size: 25px;
+    cursor: pointer;
+}

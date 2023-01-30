@@ -1,0 +1,12 @@
+.container {
+    margin-top: 50px;
+}
+.form-group{
+    font-size: 30px;
+}
+
+.btn{
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px;
+}

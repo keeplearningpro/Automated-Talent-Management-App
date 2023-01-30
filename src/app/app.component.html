@@ -1,0 +1,60 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+ 
+<app-home></app-home>
+
+<div *ngIf="router.url == '/'">
+
+  <!-- <button> routerLink="/superuser-functions">Superuser</button>
+  <button routerLink="/associateuser-functions">Associate User</button>
+   <button routerLink="/certificationinfo">See Available Certifications</button> -->
+     <h1 class="heading">Welcome to Talent Management Portal</h1>
+     
+<div class="slider">
+     <mat-carousel
+     timings="10ms ease-in"
+     [autoplay]="true"
+     interval="5000"
+     color="accent"
+     maxWidth="auto"
+     proportion="25"
+     slides="5"
+     [loop]="true"
+     [hideArrows]="false"
+     [hideIndicators]="false"
+     [useKeyboard]="true"
+     [useMouseWheel]="false"
+     orientation="ltr">
+     
+     <mat-carousel-slide
+       #matCarouselSlide
+       *ngFor="let slide of slides; let i = index"
+       [image]="slide.image"
+       overlayColor="#00000040"
+       [hideOverlay]="false">
+     </mat-carousel-slide>
+     </mat-carousel>
+    </div>
+ </div>
+
+
+
+
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+
+
+<router-outlet></router-outlet>

@@ -1,0 +1,32 @@
+.btnself {
+    margin-top: 75px;
+    margin-left: 350px;
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.btnmore{
+    margin-top: 75px;
+    margin-left: 200px;
+    padding-left: 75px;
+    padding-right: 75px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.btnhome {
+    margin-top: 75px;
+    margin-left: 50px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 15px;
+    cursor: pointer;
+}

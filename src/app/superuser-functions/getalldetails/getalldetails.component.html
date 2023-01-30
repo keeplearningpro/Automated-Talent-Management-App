@@ -1,0 +1,48 @@
+<!-- <p>getalldetails works!</p> -->
+
+<div class="panel panel-primary">
+
+    <div class="panel-heading">
+      <h2>Employee List</h2>
+    </div>
+
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead class="table-heading">
+          <tr>
+            <th>Employee ID</th>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Lead</th>
+            <th>Location</th>
+            <th>Platform</th>
+            <th>Email ID</th>
+            <th>Certification ID</th>
+            <th>Certification Name</th>
+            <th>Assigned By</th>
+            <th>Target Completion Date</th>
+            <!-- <th>Action</th> -->
+          </tr>
+        </thead>
+        <tbody class="table-body">
+          <tr *ngFor="let assolist of associatelist | async">
+            <td>{{assolist.empid}}</td>
+            <td>{{assolist.name}}</td>
+            <td>{{assolist.desig}}</td>
+            <td>{{assolist.lead}}</td>
+            <td>{{assolist.loc}}</td>
+            <td>{{assolist.platform}}</td>
+            <td>{{assolist.emailid}}</td>
+            <td>{{assolist.certid}}</td>
+            <td>{{assolist.certname}}</td>
+            <td>{{assolist.assignedby}}</td>
+            <td>{{assolist.certcompletiondate}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <div>
+    <button routerLink='/superuser-functions' class="btn btn-primary">Back To Superuser Menu</button>
+  </div>

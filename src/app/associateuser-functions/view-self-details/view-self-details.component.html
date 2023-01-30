@@ -1,0 +1,48 @@
+<p>view-self-details works!</p>
+
+
+<div *ngIf="showAssocateData" class="panel panel-primary">
+
+    <div class="panel-heading">
+      <h2>Your Current Details</h2>
+    </div>
+
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead class="table-heading">
+          <tr>
+            <th>Employee ID</th>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Lead</th>
+            <th>Location</th>
+            <th>Platform</th>
+            <th>Email ID</th>
+            <th>Certification ID</th>
+            <th>Certification Name</th>
+            <th>Assigned By</th>
+            <th>Target Completion Date</th>
+           </tr>
+        </thead>
+        <tbody class="table-body">
+          <tr>
+            <td>{{associate.empid}}</td>
+            <td>{{associate.name}}</td>
+            <td>{{associate.desig}}</td>
+            <td>{{associate.lead}}</td>
+            <td>{{associate.loc}}</td>
+            <td>{{associate.platform}}</td>
+            <td>{{associate.emailid}}</td>
+            <td>{{associate.certid}}</td>
+            <td>{{associate.certname}}</td>
+            <td>{{associate.assignedby}}</td>
+            <td>{{associate.certcompletiondate}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+
+    <div>
+      <button [routerLink] ="['/associateuser-functions', employeeId ]"class="btn btn-primary">Back to Associate Menu</button>
+    </div>
